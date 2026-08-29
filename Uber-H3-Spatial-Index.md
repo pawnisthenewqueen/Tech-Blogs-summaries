@@ -24,6 +24,8 @@ Cities have varying densities. Downtown areas require tiny grid tiles to pinpoin
 *   The world is covered in massive base hexagons (Resolution 0).
 *   Each hexagon is subdivided into 7 smaller hexagons (Resolution 1), and those into 7 smaller ones, down to Resolution 15 (which is about 1 square meter).
 
+![Uber H3 Hexagon Grid](hex.jpeg)
+
 **The Boundary Compromise:** Geometrically, 7 small hexagons cannot perfectly fit inside the straight lines of 1 large hexagon. The child hexagons actually "bleed" over the parent's edges. H3 accepts this slight margin of error by assigning the child to whichever parent covers the majority of its area. However, when doing neighbor lookups, the system ignores parent boundaries and strictly fetches the true physical neighbors.
 
 ## 5. High-Level Architectural Takeaways
